@@ -64,17 +64,6 @@ public_users.get('/review/:isbn',function (req, res) {
     return res.status(200).json(books[isbn].reviews);
 });
 
-async function getBooks() {
-  try {
-    const response = await axios.get('/books');
-    const books = response.data;
-    return books;
-  } catch (error) {
-    console.error(error);
-    throw new Error('Failed to get books');
-  }
-}
-
 // get books with Promise
 async function getBooks() {
     try {
